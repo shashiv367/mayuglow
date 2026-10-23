@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
 import { Leaf, Share2, Globe, Mail, MapPin, Phone, Heart } from 'lucide-react'
+import logoImg from '../../assets/logo.png'
 
 const footerLinks = {
   shop: [
-    { to: '/products', label: 'All Products' },
-    { to: '/products?category=single', label: 'Single Flavors' },
-    { to: '/products?category=combo', label: 'Combo Packs' },
-    { to: '/products?category=bestseller', label: 'Bestsellers' },
+    { to: '/products', label: 'All Soaps' },
+    { to: '/products?category=herbal', label: 'Herbal & Ayurvedic' },
+    { to: '/products?category=glow', label: 'Glow & Brightening' },
+    { to: '/products?category=detox', label: 'Detox & Clarifying' },
+    { to: '/products?category=soothing', label: 'Soothing & Floral' },
   ],
   company: [
     { to: '/about', label: 'Our Story' },
@@ -56,7 +58,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4 group" aria-label="MayuGlow Natural Soaps logo">
               <img
-                src="public/logo.png"
+                src={logoImg}
                 alt="MayuGlow Natural Soaps logo"
                 className="w-[120px] h-[120px] rounded-full object-cover ring-2 ring-[var(--gold-500)] shadow-[var(--shadow-md)] group-hover:scale-105 transition-transform duration-300"
               />

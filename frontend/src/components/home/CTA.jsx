@@ -37,8 +37,8 @@ export default function CTA() {
                   <span>Shop Collection</span>
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/products?category=combo" className="btn-secondary !text-white !border-white/30 hover:!bg-white hover:!text-sage-900">
-                  Explore Combos
+                <Link to="/products?category=glow" className="btn-secondary !text-white !border-white/30 hover:!bg-white hover:!text-sage-900">
+                  Explore Glow Soaps
                 </Link>
               </div>
             </div>

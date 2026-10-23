@@ -4,6 +4,7 @@ import { ShoppingBag, Menu, X, Leaf, User, ShieldCheck, LogOut, LogIn } from 'lu
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
+import logoImg from '../../assets/logo.png';
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -51,7 +52,7 @@ export default function Header() {
           {/* logo + Text Link to Home */}
           <Link to="/" className="flex items-center gap-2.5 md:gap-3 group" aria-label="MayuGlow Home">
             <img
-              src="/public/logo.png"
+              src={logoImg}
               alt="MayuGlow Natural Soaps logo"
               className="w-10 h-10 md:w-[52px] md:h-[52px] object-cover rounded-full shadow-[var(--shadow-sm)] transition-transform duration-300 group-hover:scale-105 shrink-0"
             />

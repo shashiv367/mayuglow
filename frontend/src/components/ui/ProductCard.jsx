@@ -47,11 +47,6 @@ export default function ProductCard({ product, index = 0 }) {
                 New
               </span>
             )}
-            {product.category === 'combo' && (
-              <span className="px-2 py-0.5 sm:px-2.5 sm:py-0.5 text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase bg-white/80 text-sage-800 rounded-full backdrop-blur-sm shadow-sm">
-                Combo
-              </span>
-            )}
           </div>
 
           {/* Quick add overlay */}
