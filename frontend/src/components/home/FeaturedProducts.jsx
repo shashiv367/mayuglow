@@ -6,12 +6,12 @@ import SectionHeading from '../ui/SectionHeading'
 import ScrollReveal, { StaggerContainer, StaggerItem } from '../ui/ScrollReveal'
 
 export default function FeaturedProducts() {
-  const featured = getFeaturedProducts().slice(0, 6)
+  const featured = getFeaturedProducts().slice(0, 8)
 
   return (
     <section className="section-padding relative">
       <div className="absolute top-0 right-0 w-72 h-72 bg-sage-200/30 rounded-full blur-3xl" />
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-8">
         <ScrollReveal>
           <SectionHeading
             label="Curated For You"
@@ -20,7 +20,7 @@ export default function FeaturedProducts() {
           />
         </ScrollReveal>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <StaggerContainer className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4 md:gap-6">
           {featured.map((product, i) => (
             <StaggerItem key={product.id}>
               <ProductCard product={product} index={i} />

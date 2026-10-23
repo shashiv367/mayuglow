@@ -47,7 +47,7 @@ export default function WhyNatural() {
                 <span className="text-2xl">🌿</span>
               </div>
               <div className="absolute bottom-12 left-8 bg-white/70 backdrop-blur-md border border-white/50 rounded-2xl p-4 animate-float-reverse">
-                <span className="text-2xl">✨</span>
+                <span className="text-2xl">💧</span>
               </div>
             </div>
           </ScrollReveal>

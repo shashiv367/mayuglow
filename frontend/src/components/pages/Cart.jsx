@@ -130,8 +130,8 @@ export default function Cart() {
                   {/* Product visual */}
                   <Link to={`/products/${item.slug || item.id}`} className="shrink-0">
                     <div className={`w-20 h-20 md:w-24 md:h-24 rounded-xl bg-gradient-to-br ${item.gradient || 'from-sage-200 to-gold-200'} flex items-center justify-center overflow-hidden`}>
-                      {item.imageUrls?.[0] ? (
-                        <img src={item.imageUrls[0]} alt={item.name} className="w-full h-full object-cover" />
+                      {item.imageUrls?.[0] || item.image ? (
+                        <img src={item.imageUrls?.[0] || item.image} alt={item.name} className="w-full h-full object-cover" />
                       ) : (
                         <Leaf size={24} className="text-sage-600" />
                       )}

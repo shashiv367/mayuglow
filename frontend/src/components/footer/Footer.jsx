@@ -51,17 +51,17 @@ export default function Footer() {
         </div>
 
         {/* Main footer grid */}
-        <div className="py-14 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-          {/* Brand */}
+<div className="py-14 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+          {/* Brand with circular logo and 2px gold ring */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-sage-400 to-sage-600 flex items-center justify-center">
-                <Leaf size={18} className="text-white" />
-              </div>
-              <span className="font-heading text-2xl font-bold">
-                Mayu<span className="text-sage-400">Glow</span>
-              </span>
+            <Link to="/" className="inline-block mb-4 group" aria-label="MayuGlow Natural Soaps logo">
+              <img
+                src="public/logo.png"
+                alt="MayuGlow Natural Soaps logo"
+                className="w-[120px] h-[120px] rounded-full object-cover ring-2 ring-[var(--gold-500)] shadow-[var(--shadow-md)] group-hover:scale-105 transition-transform duration-300"
+              />
             </Link>
+
             <p className="text-white/50 text-sm leading-relaxed mb-6">
               Handcrafted, 100% natural, chemical-free soaps inspired by nature&apos;s finest ingredients. Pure goodness for your skin.
             </p>

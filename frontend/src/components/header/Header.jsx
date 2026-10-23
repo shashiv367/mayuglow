@@ -42,22 +42,22 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-white/75 backdrop-blur-xl border-b border-white/50 shadow-lg shadow-sage-900/5 py-3'
-            : 'bg-transparent py-5 md:py-6'
+    <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-cream-50/85 backdrop-blur-md ${
+          scrolled ? 'shadow-sm py-2.5 md:py-3' : 'py-3 md:py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sage-500 to-sage-700 flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <Leaf size={20} className="text-white" />
-            </div>
+          {/* logo + Text Link to Home */}
+          <Link to="/" className="flex items-center gap-2.5 md:gap-3 group" aria-label="MayuGlow Home">
+            <img
+              src="/public/logo.png"
+              alt="MayuGlow Natural Soaps logo"
+              className="w-10 h-10 md:w-[52px] md:h-[52px] object-cover rounded-full shadow-[var(--shadow-sm)] transition-transform duration-300 group-hover:scale-105 shrink-0"
+            />
             <div>
-              <span className="font-heading text-2xl font-bold text-sage-900 tracking-tight">
-                Mayu<span className="text-sage-500">Glow</span>
+              <span className="font-heading text-[26px] font-semibold text-[var(--forest-900)] tracking-tight">
+                Mayu<span className="text-[var(--gold-600)]">Glow</span>
               </span>
             </div>
           </Link>

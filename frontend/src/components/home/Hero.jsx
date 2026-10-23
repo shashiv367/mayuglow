@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, Leaf } from 'lucide-react'
 import { motion } from 'framer-motion'
+import heroSoapImg from '../../assets/Soaps/multanimitti.jpg'
 
 export default function Hero() {
   return (
@@ -20,7 +21,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 backdrop-blur-md border border-white/50 mb-8">
-                <Sparkles size={14} className="text-gold-500" />
+                <Leaf size={14} className="text-sage-600" />
                 <span className="text-xs font-medium tracking-wider uppercase text-sage-600">
                   100% Natural · Chemical Free
                 </span>
@@ -90,15 +91,19 @@ export default function Hero() {
               {/* Main soap display */}
               <div className="absolute inset-8 rounded-3xl bg-gradient-to-br from-sage-200/40 via-cream-100 to-gold-200/30 backdrop-blur-sm border border-white/50 shadow-xl flex items-center justify-center">
                 <div className="relative">
-                  <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-sage-400 via-sage-500 to-sage-700 shadow-2xl shadow-sage-500/30 animate-float flex items-center justify-center">
-                    <span className="text-7xl">🧼</span>
+                  <div className="w-56 h-56 rounded-3xl shadow-2xl shadow-sage-900/15 animate-float flex items-center justify-center overflow-hidden border-2 border-white/80 bg-white">
+                    <img
+                      src={heroSoapImg}
+                      alt="MayuGlow Handcrafted Natural Soap"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   {/* Orbiting mini soaps */}
                   {[
                     { emoji: '🌸', color: 'from-[#B8A9C9] to-[#9B8AB8]', delay: '0s', pos: 'top-0 -right-16' },
                     { emoji: '🍊', color: 'from-[#F4A261] to-[#E76F51]', delay: '1s', pos: '-bottom-8 -left-12' },
                     { emoji: '🌿', color: 'from-[#6B8F71] to-[#4A6B4E]', delay: '2s', pos: 'top-1/2 -right-20' },
-                    { emoji: '✨', color: 'from-[#E8B84A] to-[#D4A030]', delay: '0.5s', pos: '-top-12 left-1/4' },
+                    { emoji: '🍯', color: 'from-[#E8B84A] to-[#D4A030]', delay: '0.5s', pos: '-top-12 left-1/4' },
                   ].map((item, i) => (
                     <div
                       key={i}

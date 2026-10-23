@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axiosClient from '../../api/axiosClient';
-import { Users, Package, ShoppingBag, FolderTree, TrendingUp, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Users, Package, ShoppingBag, FolderTree, TrendingUp, ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 function Dashboard() {
@@ -33,7 +33,7 @@ function Dashboard() {
       {/* Header */}
       <div>
         <div className="flex items-center gap-2 text-sage-600 text-sm font-semibold tracking-wider uppercase mb-1">
-          <Sparkles className="w-4 h-4 text-gold-500" />
+          <ShieldCheck className="w-4 h-4 text-gold-500" />
           <span>Management Console</span>
         </div>
         <h1 className="font-heading text-3xl md:text-4xl text-sage-950 font-bold">

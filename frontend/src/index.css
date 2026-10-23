@@ -7,17 +7,19 @@
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Cormorant Garamond", ui-serif, Georgia, serif;
 
-  --color-sage-50: #f4f7f4;
-  --color-sage-100: #e4ebe4;
-  --color-sage-200: #c8d7c8;
-  --color-sage-300: #a3bca3;
-  --color-sage-400: #7a9a7a;
-  --color-sage-500: #6b8f71;
-  --color-sage-600: #547054;
-  --color-sage-700: #445a44;
-  --color-sage-800: #384838;
-  --color-sage-900: #2c3e2d;
-  --color-sage-950: #1a2e1b;
+  --color-sage-50: #f2f8f3;
+  --color-sage-100: #def0e2;
+  --color-sage-200: #bee3c5;
+  --color-sage-300: #93cea0;
+  --color-sage-400: #5eb571;
+  --color-sage-500: #38984c;
+  --color-sage-600: #297c3c;
+  --color-sage-700: #226431;
+  --color-sage-800: #1b4e27;
+  --color-sage-900: #133c1d;
+  --color-sage-950: #0a2712;
+
+  --color-forest-900: #133c1d;
 
   --color-cream-50: #fdfbf7;
   --color-cream-100: #faf7f2;
@@ -140,20 +142,20 @@
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
-    background: linear-gradient(135deg, var(--color-sage-600), var(--color-sage-800));
+    background: linear-gradient(135deg, var(--color-sage-500), var(--color-sage-700));
     border: none;
     border-radius: 9999px;
     cursor: pointer;
     overflow: hidden;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 16px rgba(44, 62, 45, 0.25);
+    box-shadow: 0 4px 16px rgba(41, 124, 60, 0.28);
   }
 
   .btn-primary::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--color-sage-500), var(--color-sage-700));
+    background: linear-gradient(135deg, var(--color-sage-400), var(--color-sage-600));
     opacity: 0;
     transition: opacity 0.35s;
     border-radius: inherit;
@@ -161,7 +163,7 @@
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(44, 62, 45, 0.35);
+    box-shadow: 0 8px 28px rgba(41, 124, 60, 0.38);
     color: #ffffff;
   }
 

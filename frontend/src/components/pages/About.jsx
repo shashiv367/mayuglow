@@ -121,15 +121,14 @@ export default function About() {
       </section>
 
       {/* Sustainability */}
-      <section id="sustainability" className="section-padding bg-sage-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-sage-900 via-sage-800 to-sage-950" />
+      <section id="sustainability" className="section-padding bg-gradient-to-b from-cream-50 via-sage-100/50 to-cream-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-sage-200/40 rounded-full blur-3xl pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-5 md:px-8">
           <ScrollReveal>
             <SectionHeading
               label="Sustainability"
               title="Good for You, Good for Earth"
               subtitle="We believe beautiful skin shouldn't come at the planet's expense."
-              light
             />
           </ScrollReveal>
 
@@ -140,12 +139,12 @@ export default function About() {
               { icon: Users, title: 'Fair Trade', description: 'We pay fair prices to our ingredient suppliers and provide fair wages to our artisan team.' },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="glass-dark rounded-2xl p-8 text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-5">
-                    <item.icon size={24} className="text-sage-300" />
+                <div className="glass-card rounded-2xl p-8 text-center bg-white/75 backdrop-blur-xl border border-white/70 shadow-md hover:shadow-xl transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-sage-100/80 flex items-center justify-center mx-auto mb-5">
+                    <item.icon size={24} className="text-sage-600" />
                   </div>
-                  <h3 className="font-heading text-xl font-semibold text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{item.description}</p>
+                  <h3 className="font-heading text-xl font-semibold text-sage-900 mb-3">{item.title}</h3>
+                  <p className="text-sm text-sage-600 leading-relaxed">{item.description}</p>
                 </div>
               </ScrollReveal>
             ))}

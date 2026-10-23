@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { Star, ShoppingBag, Check, ArrowLeft, Minus, Plus, Heart } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -14,6 +14,25 @@ export default function ProductDetail() {
   const [selectedSize, setSelectedSize] = useState(product?.sizes[0] || null)
   const [quantity, setQuantity] = useState(1)
   const [added, setAdded] = useState(false)
+
+  const images = (product?.imageUrls && product.imageUrls.length > 0)
+    ? product.imageUrls
+    : product?.image
+    ? [product.image]
+    : []
+  const [selectedImage, setSelectedImage] = useState(images[0] || null)
+
+  useEffect(() => {
+    if (product) {
+      const curImages = (product.imageUrls && product.imageUrls.length > 0)
+        ? product.imageUrls
+        : product.image
+        ? [product.image]
+        : []
+      setSelectedImage(curImages[0] || null)
+      setSelectedSize(product.sizes[0] || null)
+    }
+  }, [slug])
 
   if (!product) return <Navigate to="/products" replace />
 
@@ -44,21 +63,57 @@ export default function ProductDetail() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Image */}
             <ScrollReveal direction="left">
-              <div className="relative aspect-square rounded-3xl overflow-hidden sticky top-28">
-                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} animate-gradient`} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.span
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-[8rem] md:text-[10rem] drop-shadow-2xl"
-                  >
-                    {flavorData[0]?.emoji || '🧼'}
-                  </motion.span>
+              <div className="sticky top-28 space-y-4">
+                <div className="relative aspect-square rounded-3xl overflow-hidden shadow-xl bg-sage-50 border border-white/60">
+                  {selectedImage ? (
+                    <img
+                      src={selectedImage}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} animate-gradient`} />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <motion.span
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 0.6 }}
+                          className="text-[8rem] md:text-[10rem] drop-shadow-2xl"
+                        >
+                          {flavorData[0]?.emoji || '🧼'}
+                        </motion.span>
+                      </div>
+                    </>
+                  )}
+                  {product.bestseller && (
+                    <div className="absolute top-6 left-6 px-4 py-1.5 bg-gold-500 text-sage-950 text-xs font-bold tracking-wider uppercase rounded-full shadow-md z-10">
+                      Bestseller
+                    </div>
+                  )}
+                  {product.new && (
+                    <div className="absolute top-6 left-6 px-4 py-1.5 bg-sage-600 text-white text-xs font-bold tracking-wider uppercase rounded-full shadow-md z-10">
+                      New
+                    </div>
+                  )}
                 </div>
-                {product.bestseller && (
-                  <div className="absolute top-6 left-6 px-4 py-1.5 bg-gold-500 text-sage-950 text-xs font-bold tracking-wider uppercase rounded-full">
-                    Bestseller
+
+                {/* Thumbnails if multiple images */}
+                {images.length > 1 && (
+                  <div className="flex gap-3 overflow-x-auto pb-1">
+                    {images.map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setSelectedImage(img)}
+                        className={`w-16 h-16 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
+                          selectedImage === img
+                            ? 'border-sage-600 shadow-md scale-105'
+                            : 'border-white/60 opacity-70 hover:opacity-100'
+                        }`}
+                      >
+                        <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
                   </div>
                 )}
               </div>
