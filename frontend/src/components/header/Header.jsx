@@ -52,11 +52,7 @@ export default function Header() {
           {/* logo + Text Link to Home */}
           <Link to="/" className="flex items-center gap-2.5 md:gap-3 group" aria-label="MayuGlow Home">
             <img
-<<<<<<< HEAD
               src={logoImg}
-=======
-              src="/logo.png"
->>>>>>> b1a464566db54b87b2bcf5b2768e37ec918d4a7d
               alt="MayuGlow Natural Soaps logo"
               className="w-10 h-10 md:w-[52px] md:h-[52px] object-cover rounded-full shadow-[var(--shadow-sm)] transition-transform duration-300 group-hover:scale-105 shrink-0"
             />
